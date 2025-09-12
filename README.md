@@ -4,61 +4,65 @@ A comprehensive collection of C++ projects and exercises covering modules 00-09 
 
 ## 📁 Projects
 
-### CPP_Module_00 ✅
+### Part 1: C++ Fundamentals (Modules 00-04)
+
+#### CPP_Module_00 ✅
 - **Status**: In Progress
 - **Description**: Introduction to C++ fundamentals
 - **Key Concepts**: Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and more
 - **Documentation**: [📖 Detailed README](CPP_Module_00/README.md)
 
-### CPP_Module_01 🔄
+#### CPP_Module_01 🔄
 - **Status**: Planned
 - **Description**: Memory allocation, pointers to members, references, switch statement
 - **Key Concepts**: New/delete operators, references, pointer to members, switch cases
 - **Documentation**: [📖 Detailed README](CPP_Module_01/README.md)
 
-### CPP_Module_02 🔄
+#### CPP_Module_02 🔄
 - **Status**: Planned
 - **Description**: Ad-hoc polymorphism, overloaded operators, canonical classes
 - **Key Concepts**: Operator overloading, canonical form, orthodox canonical class
 - **Documentation**: [📖 Detailed README](CPP_Module_02/README.md)
 
-### CPP_Module_03 🔄
+#### CPP_Module_03 🔄
 - **Status**: Planned
 - **Description**: Inheritance
 - **Key Concepts**: Virtual functions, virtual destructors, inheritance, polymorphism
 - **Documentation**: [📖 Detailed README](CPP_Module_03/README.md)
 
-### CPP_Module_04 🔄
+#### CPP_Module_04 🔄
 - **Status**: Planned
 - **Description**: Subtype polymorphism, abstract classes, interfaces
 - **Key Concepts**: Pure virtual functions, abstract classes, interfaces
 - **Documentation**: [📖 Detailed README](CPP_Module_04/README.md)
 
-### CPP_Module_05 🔄
+### Part 2: Advanced C++ (Modules 05-09)
+
+#### CPP_Module_05 🔄
 - **Status**: Planned
 - **Description**: Repetition and exceptions
 - **Key Concepts**: Exception handling, try-catch blocks, custom exceptions
 - **Documentation**: [📖 Detailed README](CPP_Module_05/README.md)
 
-### CPP_Module_06 🔄
+#### CPP_Module_06 🔄
 - **Status**: Planned
 - **Description**: C++ casts
 - **Key Concepts**: Static cast, dynamic cast, const cast, reinterpret cast
 - **Documentation**: [📖 Detailed README](CPP_Module_06/README.md)
 
-### CPP_Module_07 🔄
+#### CPP_Module_07 🔄
 - **Status**: Planned
 - **Description**: C++ templates
 - **Key Concepts**: Function templates, class templates, template specialization
 - **Documentation**: [📖 Detailed README](CPP_Module_07/README.md)
 
-### CPP_Module_08 🔄
+#### CPP_Module_08 🔄
 - **Status**: Planned
 - **Description**: Templated containers, iterators, algorithms
 - **Key Concepts**: STL containers, iterators, algorithms, template containers
 - **Documentation**: [📖 Detailed README](CPP_Module_08/README.md)
 
-### CPP_Module_09 🔄
+#### CPP_Module_09 🔄
 - **Status**: Planned
 - **Description**: RPN (Reverse Polish Notation)
 - **Key Concepts**: Stack-based evaluation, mathematical expressions, data structures
@@ -116,21 +120,23 @@ This repository is actively maintained and updated as I progress through the 42 
 
 ```
 CPP/
-├── CPP_Module_00/          # Module 0: C++ fundamentals
-├── CPP_Module_01/          # Module 1: Memory allocation & references
-├── CPP_Module_02/          # Module 2: Operator overloading
-├── CPP_Module_03/          # Module 3: Inheritance
-├── CPP_Module_04/          # Module 4: Abstract classes & interfaces
-├── CPP_Module_05/          # Module 5: Exceptions
-├── CPP_Module_06/          # Module 6: C++ casts
-├── CPP_Module_07/          # Module 7: Templates
-├── CPP_Module_08/          # Module 8: STL containers & algorithms
-├── CPP_Module_09/          # Module 9: RPN calculator
+├── Part 1: C++ Fundamentals (Modules 00-04)
+│   ├── CPP_Module_00/          # Module 0: C++ fundamentals
+│   ├── CPP_Module_01/          # Module 1: Memory allocation & references
+│   ├── CPP_Module_02/          # Module 2: Operator overloading
+│   ├── CPP_Module_03/          # Module 3: Inheritance
+│   └── CPP_Module_04/          # Module 4: Abstract classes & interfaces
+├── Part 2: Advanced C++ (Modules 05-09)
+│   ├── CPP_Module_05/          # Module 5: Exceptions
+│   ├── CPP_Module_06/          # Module 6: C++ casts
+│   ├── CPP_Module_07/          # Module 7: Templates
+│   ├── CPP_Module_08/          # Module 8: STL containers & algorithms
+│   └── CPP_Module_09/          # Module 9: RPN calculator
 ├── .gitignore             # Git ignore rules (excludes subjects/evaluations)
 └── README.md              # This file
 ```
 
-*Note: Modules 01-09 will be added as I progress through the curriculum. Each module includes a detailed README with comprehensive documentation.*
+*Note: Modules 01-09 will be added as I progress through the curriculum. Each module includes a detailed README with comprehensive documentation. The curriculum is structured in two parts: Fundamentals (00-04) and Advanced C++ (05-09).*
 
 ## 🔧 Development Guidelines
 
