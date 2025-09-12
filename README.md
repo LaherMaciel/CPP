@@ -8,51 +8,61 @@ A comprehensive collection of C++ projects and exercises covering modules 00-09 
 - **Status**: In Progress
 - **Description**: Introduction to C++ fundamentals
 - **Key Concepts**: Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and more
+- **Documentation**: [📖 Detailed README](CPP_Module_00/README.md)
 
 ### CPP_Module_01 🔄
 - **Status**: Planned
 - **Description**: Memory allocation, pointers to members, references, switch statement
 - **Key Concepts**: New/delete operators, references, pointer to members, switch cases
+- **Documentation**: [📖 Detailed README](CPP_Module_01/README.md)
 
 ### CPP_Module_02 🔄
 - **Status**: Planned
 - **Description**: Ad-hoc polymorphism, overloaded operators, canonical classes
 - **Key Concepts**: Operator overloading, canonical form, orthodox canonical class
+- **Documentation**: [📖 Detailed README](CPP_Module_02/README.md)
 
 ### CPP_Module_03 🔄
 - **Status**: Planned
 - **Description**: Inheritance
 - **Key Concepts**: Virtual functions, virtual destructors, inheritance, polymorphism
+- **Documentation**: [📖 Detailed README](CPP_Module_03/README.md)
 
 ### CPP_Module_04 🔄
 - **Status**: Planned
 - **Description**: Subtype polymorphism, abstract classes, interfaces
 - **Key Concepts**: Pure virtual functions, abstract classes, interfaces
+- **Documentation**: [📖 Detailed README](CPP_Module_04/README.md)
 
 ### CPP_Module_05 🔄
 - **Status**: Planned
 - **Description**: Repetition and exceptions
 - **Key Concepts**: Exception handling, try-catch blocks, custom exceptions
+- **Documentation**: [📖 Detailed README](CPP_Module_05/README.md)
 
 ### CPP_Module_06 🔄
 - **Status**: Planned
 - **Description**: C++ casts
 - **Key Concepts**: Static cast, dynamic cast, const cast, reinterpret cast
+- **Documentation**: [📖 Detailed README](CPP_Module_06/README.md)
 
 ### CPP_Module_07 🔄
 - **Status**: Planned
 - **Description**: C++ templates
 - **Key Concepts**: Function templates, class templates, template specialization
+- **Documentation**: [📖 Detailed README](CPP_Module_07/README.md)
 
 ### CPP_Module_08 🔄
 - **Status**: Planned
 - **Description**: Templated containers, iterators, algorithms
 - **Key Concepts**: STL containers, iterators, algorithms, template containers
+- **Documentation**: [📖 Detailed README](CPP_Module_08/README.md)
 
 ### CPP_Module_09 🔄
 - **Status**: Planned
 - **Description**: RPN (Reverse Polish Notation)
 - **Key Concepts**: Stack-based evaluation, mathematical expressions, data structures
+- **Documentation**: [📖 Detailed README](CPP_Module_09/README.md)
 
 **Legend**: ✅ Completed | 🔄 In Progress | ⏳ Planned
 
@@ -100,6 +110,7 @@ This repository is actively maintained and updated as I progress through the 42 
 2. Check the commit history to see detailed progress
 3. Review the module status indicators in this README
 4. Each module folder contains detailed exercise documentation
+5. Click on the 📖 Detailed README links for comprehensive module information
 
 ## 🏗️ Project Structure
 
@@ -119,7 +130,7 @@ CPP/
 └── README.md              # This file
 ```
 
-*Note: Modules 01-09 will be added as I progress through the curriculum.*
+*Note: Modules 01-09 will be added as I progress through the curriculum. Each module includes a detailed README with comprehensive documentation.*
 
 ## 🔧 Development Guidelines
 
