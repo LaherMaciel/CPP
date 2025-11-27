@@ -1,0 +1,71 @@
+NAME = megaphone
+
+# All source files
+SRCS_LIST = megaphone.cpp
+
+# Object files
+OBJECT_LIST = $(notdir $(SRCS_LIST:.cpp=.o))
+OBJECTS_DIRECTORY = objects/
+OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
+
+# Compiler settings
+CC = c++
+CFLAGS = -g -Wall -Werror -Wextra -std=c++98
+
+# Colors
+RED     = \033[0;31m
+GREEN   = \033[0;32m
+YELLOW  = \033[0;33m
+BLUE    = \033[0;34m
+RESET   = \033[0m
+
+# Main target
+$(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
+	@echo "[" "$(YELLOW)..$(RESET)" "] | Compiling files..."
+	@if $(CC) $(CFLAGS) $(OBJECTS) -o $(NAME); then \
+		echo "[" "$(GREEN)OK$(RESET)" "] | Compilation successful!"; \
+		echo "[" "$(GREEN)OK$(RESET)" "] | $(NAME) created successfully!"; \
+	else \
+		echo "[" "$(RED)Error$(RESET)" "] | An error occurred while creating $(NAME)."; \
+		make clean > /dev/null 2>&1; \
+		echo "[" "$(RED)Error$(RESET)" "] | All objects cleaned."; \
+	fi
+
+# Create objects directory structure
+$(OBJECTS_DIRECTORY):
+	@echo "[" "$(YELLOW)..$(RESET)" "] | Creating objects directory structure..."
+	@mkdir -p $(OBJECTS_DIRECTORY)
+	@echo "[" "$(GREEN)OK$(RESET)" "] | Objects directory structure ready!"
+
+# Compile object files
+$(OBJECTS_DIRECTORY)%.o : %.cpp
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME)
+
+# Clean targets
+clean:
+	@echo "[" "$(YELLOW)..$(RESET)" "] | Removing object files..."
+	@rm -rf $(OBJECTS_DIRECTORY)
+	@echo "[" "$(GREEN)OK$(RESET)" "] | Object files removed."
+
+fclean: clean
+	@echo "[" "$(YELLOW)..$(RESET)" "] | Removing $(NAME)..."
+	@rm -rf $(NAME)
+	@echo "[" "$(GREEN)OK$(RESET)" "] | $(NAME) removed."
+
+# Rebuild target
+re: fclean
+	@echo "[" "$(YELLOW)..$(RESET)" "] | Rebuilding $(NAME)..."
+	@make -s
+
+# Help target
+help:
+	@echo "Available targets:"
+	@echo "  $(NAME)     - Build the $(NAME) executable"
+	@echo "  clean       - Remove object files"
+	@echo "  fclean      - Remove object files and executable"
+	@echo "  re          - Rebuild everything"
+	@echo "  help        - Show this help message"
+
+.PHONY: all clean fclean re norm help
