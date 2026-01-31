@@ -24,6 +24,8 @@
 *.lib
 
 # Executables
+*/ex00/megaphone
+*/ex01/MyAwesomePhoneBook
 *.exe
 *.out
 *.app

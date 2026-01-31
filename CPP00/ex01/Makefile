@@ -1,7 +1,14 @@
 NAME = MyAwesomePhoneBook
 
 # All source files
-SRCS_LIST = MyAwesomePhoneBook.cpp
+SRCS_CPP = Contact.cpp PhoneBook.cpp MyAwesomePhoneBook.cpp
+SRCS_DIRECTORY = src/
+SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
+
+# Header files
+HEADER_LIST = Contact.hpp PhoneBook.hpp
+HEADER_DIRECTORY = include/
+HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
 # Object files
 OBJECT_LIST = $(notdir $(SRCS_LIST:.cpp=.o))
@@ -9,8 +16,9 @@ OBJECTS_DIRECTORY = objects/
 OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
 
 # Compiler settings
-CC = c++
-CFLAGS = -g -Wall -Werror -Wextra -std=c++98
+CPP = c++
+CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
+INCLUDES = -I$(HEADER_DIRECTORY)
 
 # Colors
 RED     = \033[0;31m
@@ -22,7 +30,7 @@ RESET   = \033[0m
 # Main target
 $(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
 	@echo "[" "$(YELLOW)..$(RESET)" "] | Compiling files..."
-	@if $(CC) $(CFLAGS) $(OBJECTS) -o $(NAME); then \
+	@if $(CPP) $(CPPFLAGS) $(OBJECTS) -o $(NAME); then \
 		echo "[" "$(GREEN)OK$(RESET)" "] | Compilation successful!"; \
 		echo "[" "$(GREEN)OK$(RESET)" "] | $(NAME) created successfully!"; \
 	else \
@@ -38,8 +46,9 @@ $(OBJECTS_DIRECTORY):
 	@echo "[" "$(GREEN)OK$(RESET)" "] | Objects directory structure ready!"
 
 # Compile object files
-$(OBJECTS_DIRECTORY)%.o : %.cpp
-	@$(CC) $(CFLAGS) -c $< -o $@
+$(OBJECTS_DIRECTORY)%.o : $(SRCS_DIRECTORY)%.cpp $(HEADERS)
+	@mkdir -p $(@D)
+	@$(CPP) $(CPPFLAGS) -c $(INCLUDES) $< -o $@
 
 all: $(NAME)
 
@@ -58,6 +67,9 @@ fclean: clean
 re: fclean
 	@echo "[" "$(YELLOW)..$(RESET)" "] | Rebuilding $(NAME)..."
 	@make -s
+
+run: $(NAME)
+	@./$(NAME)
 
 # Help target
 help:

@@ -1,13 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 17:12:57 by lahermaciel       #+#    #+#             */
-/*   Updated: 2025/12/02 15:32:43 by lahermaciel      ###   ########.fr       */
+/*   Created: 2026/01/30 16:09:16 by lahermaciel       #+#    #+#             */
+/*   Updated: 2026/01/30 17:00:47 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# include "Contact.hpp"
+
+class PhoneBook
+{
+	private:
+		Contact	contacts[8];
+		int		total_contacts;
+		int		next_index;
+
+	public:
+		PhoneBook();
+		void add_contact();
+		void search_contacts();
+};
+
+#endif // PHONEBOOK_HPP
