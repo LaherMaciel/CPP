@@ -1,12 +1,12 @@
 NAME = TheJobOfYourDreams
 
 # All source files
-SRCS_CPP =
+SRCS_CPP = tests.cpp Account.cpp
 SRCS_DIRECTORY = src/
 SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
 
 # Header files
-HEADER_LIST =
+HEADER_LIST = Account.hpp
 HEADER_DIRECTORY = include/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 

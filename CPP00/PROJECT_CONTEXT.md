@@ -2,7 +2,7 @@
 **Project:** C++ - Module 00 (42 Curriculum)
 **Student:** lahermaciel
 **Started:** 2026-01-27
-**Last Updated:** 2026-01-30
+**Last Updated:** 2026-01-31
 
 ---
 
@@ -11,12 +11,13 @@
 ### Exercises
 - **ex00:** Megaphone (COMPLETED)
 - **ex01:** PhoneBook (COMPLETED - Fully implemented and tested)
-- **ex02:** Not yet started
+- **ex02:** IN PROGRESS - Constructor implemented, ~8 functions remaining
 
 ### Current Focus
-**Exercise 02: Account Class** (next up)
-- ex01 PhoneBook completed 2026-01-30
-- Next: ex02 implementation
+**Exercise 02: Account Class** (IN PROGRESS)
+- Started: 2026-01-31
+- Status: Constructor complete, static variables defined
+- Remaining: _displayTimestamp, getters, displayStatus, displayAccountsInfos, makeDeposit, makeWithdrawal, destructor
 
 ---
 
@@ -159,11 +160,12 @@
 ## KNOWN ISSUES
 
 ### Current Blockers
-**None** - ex01 complete, ready for ex02.
+1. **ex02 incomplete:** Constructor done, 8 functions remaining (_displayTimestamp, 4 getters, displayStatus, displayAccountsInfos, makeDeposit, makeWithdrawal, destructor)
+2. **Knowledge gap:** C time functions (time, localtime, struct tm) - assigned as homework
 
 ### Risks to Monitor
-1. **Time pressure:** Student has deadline March 1st for multiple modules
-2. **Procrastination pattern:** Not observed in Session 3 - possibly resolved
+1. **TIME PRESSURE - CRITICAL:** Student has deadline March 1st for multiple modules (CPP00-04 minimum). Currently behind pace.
+2. **Stopping pattern:** Session 4 stopped at moderate progress despite stating commitment to goals. Pattern to monitor - may indicate task avoidance when faced with unfamiliar topics (time functions research).
 
 ---
 
@@ -209,19 +211,64 @@
 
 **Process Improvement:** Student requested automatic context file updates at session end to eliminate mental overhead of remembering. Implemented as standard procedure - files will auto-update on session endings and major milestones.
 
+### Session 4 (2026-01-31)
+**Status:** ex02 IN PROGRESS - Foundational work, moderate code progress
+
+**Achievements:**
+- Repository restructuring: Renamed CPP_Module_XX to CPPXX for brevity
+- Git practices: Updated .gitignore (executables, *.tmp pattern), clean commit workflow
+- Understood static vs instance members (class-level vs object-level variables)
+- Understood private constructors as design pattern (enforcing invariants)
+- Implemented Account.cpp static variable definitions (4 static members initialized)
+- Implemented Account constructor with proper member initialization
+- **CRITICAL BUG FIXED:** Caught and corrected shadowing bug (declaring local vars instead of assigning to members)
+- Understood timestamp format requirements from log file
+
+**Concepts Learned This Session:**
+- Static class members (shared across all instances, one copy for entire class)
+- Static member functions (can be called without object instance)
+- Static variable definition requirement (declare in .hpp, define in .cpp at file scope)
+- Private constructors preventing default instantiation
+- Log file as specification (reverse-engineering approach)
+- Variable shadowing bug (int _var = x creates NEW local, not assigns to member)
+
+**Progress Assessment:** BELOW minimum threshold
+- Minimum: "ex02 completed OR significant progress"
+- Actual: Moderate progress (1 of ~9 functions implemented)
+- Positive: Strong conceptual understanding, clean development practices
+- Concern: Time pressure with March 1st deadline looming
+
+**Behavioral Note:** Student chose to research time functions independently rather than accept direct solution, even when tired late at night. Shows commitment to genuine learning over shortcuts. However, chose to stop before completing research/implementation - pattern to monitor.
+
+**Session End Status:** Stopped late at night. Committed to "compensate tomorrow" by finishing ex02 + starting CPP01.
+
 ---
 
 ## NOTES FOR NEXT SESSION
 
+### Homework Before Next Session:
+1. Research C time functions on cplusplus.com (20 min):
+   - time() - getting current time
+   - localtime() - converting to date/time components
+   - struct tm - members tm_year, tm_mon, tm_mday, tm_hour, tm_min, tm_sec
+   - Note the gotchas: tm_year (years since 1900), tm_mon (0-11 for Jan-Dec)
+2. Review log file format to understand function outputs
+
 ### Start Session With:
-1. Review ex02 subject requirements
-2. ex02 is about recreating a class from provided header and test files
-3. Begin ex02 implementation
+1. Implement _displayTimestamp() using researched time functions
+2. Continue with remaining ex02 functions in order:
+   - Static getters (getNbAccounts, getTotalAmount, etc.) - simple
+   - displayStatus() - shows individual account info
+   - displayAccountsInfos() - shows summary using getters
+   - makeDeposit() - modifies account, updates static totals
+   - makeWithdrawal() - modifies with validation (can fail if insufficient funds)
+   - Destructor - cleanup and logging
 
 ### Success Criteria for Next Session (Minimum Progress Threshold):
-**CONFIDENTIAL - Only reveal if student tries to end session early**
-- ex02 completed OR significant progress
-- If ex02 done: begin CPP Module 01
+**CRITICAL - Student is behind schedule**
+- **MANDATORY:** Complete ex02 fully (all functions implemented and tested against log file)
+- **STRETCH GOAL:** Begin CPP Module 01 to compensate for Session 4 shortfall
+- March 1st deadline requires finishing CPP00-04 minimum - pace needs to increase
 
 ### Teaching Points to Emphasize:
 - Student has proven they can implement full classes from scratch
