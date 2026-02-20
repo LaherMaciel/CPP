@@ -5,35 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/01 10:44:13 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/02/01 11:45:23 by lahermaciel      ###   ########.fr       */
+/*   Created: 2026/02/01 14:23:24 by lahermaciel       #+#    #+#             */
+/*   Updated: 2026/02/02 19:11:35 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <time.h>
-
-void	addZero(int time)
-{
-	if (time >= 10)
-		std::cout << time;
-	else
-		std::cout << "0" << time;
-}
+#include <string>
 
 int main()
 {
-	time_t test_rawTime;
-	struct tm * timeinfo;
+	std::string	message = "HI THIS IS BRAIN";
+	std::string	&stringREF = message;
+	std::string	*stringPTR = &message;
 
-	test_rawTime = time(NULL);
-	timeinfo = localtime(&test_rawTime);
-	std::cout << "[" << timeinfo->tm_year + 1900;
-	addZero(timeinfo->tm_mon + 1);
-	addZero(timeinfo->tm_mday);
-	std::cout << "_";
-	addZero(timeinfo->tm_hour);
-	addZero(timeinfo->tm_min);
-	addZero(timeinfo->tm_sec);
-	std::cout << "] ";
+	std::cout << &message << std::endl;
+	std::cout << &stringREF << std::endl; //references share the memory
+		// address then the original variable address
+	std::cout << stringPTR << std::endl  << std::endl;
+
+	std::cout << message << std::endl;
+	std::cout << stringREF << std::endl;
+	std::cout << *stringPTR << std::endl; //Because the value that the
+		// pointer stores is the address of the pointed variable
+	return 0;
 }
