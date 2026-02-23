@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 14:23:24 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/02/22 22:02:14 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/02/23 17:20:11 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 #include "../include/Harl.hpp"
 
 
-int main()
+int main(int argc, char **argv)
 {
 	Harl harl;
 
-	harl.complain("DEBUG");
-	std::cout << std::endl;
-	harl.complain("INFO");
-	std::cout << std::endl;
-	harl.complain("WARNING");
-	std::cout << std::endl;
-	harl.complain("ERROR");
+	switch (argc)
+	{
+		case 2:
+			harl.complain(argv[1]);
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
 	return (0);
 }

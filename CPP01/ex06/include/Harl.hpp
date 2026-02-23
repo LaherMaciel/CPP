@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/01 14:23:24 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/02/22 22:02:14 by lahermaciel      ###   ########.fr       */
+/*   Created: 2026/02/19 13:27:17 by lahermaciel       #+#    #+#             */
+/*   Updated: 2026/02/19 19:29:42 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "../include/Harl.hpp"
+#include <string>
 
-
-int main()
+class Harl
 {
-	Harl harl;
-
-	harl.complain("DEBUG");
-	std::cout << std::endl;
-	harl.complain("INFO");
-	std::cout << std::endl;
-	harl.complain("WARNING");
-	std::cout << std::endl;
-	harl.complain("ERROR");
-	return (0);
-}
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+	public:
+		Harl();
+		~Harl();
+		void	complain(std::string level);
+};
