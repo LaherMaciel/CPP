@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:32 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/06 10:16:09 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/06 10:59:29 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ class Fixed
 		Fixed();
 		~Fixed();
 		Fixed(const Fixed& other);
+		Fixed(const int& other);
+		Fixed(const float& other);
 		Fixed& operator=(const Fixed& other);
 		int getRawBits();
 		void setRawBits(int const raw);
+		float toFloat( void ) const;
+		int toInt( void ) const;
 };
 
 #endif

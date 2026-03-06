@@ -6,11 +6,13 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 13:27:17 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/02/19 19:29:42 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/06 10:15:44 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef HARL_HPP
+# define HARL_HPP
+# include <string>
 
 class Harl
 {
@@ -24,3 +26,5 @@ class Harl
 		~Harl();
 		void	complain(std::string level);
 };
+
+#endif

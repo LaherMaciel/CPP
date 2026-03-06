@@ -6,23 +6,12 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:52 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/06 10:42:57 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/06 11:59:57 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
 #include <iostream>
-
-int Fixed::getRawBits()
-{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (_fixedPointValue);
-}
-
-void Fixed::setRawBits(int const raw)
-{
-	_fixedPointValue = raw;
-}
 
 Fixed::Fixed()
 {
@@ -46,4 +35,35 @@ Fixed& Fixed::operator=(const Fixed& other)
 	std::cout << "Copy assignation operator called" << std::endl;
 	this->_fixedPointValue = other._fixedPointValue;
 	return (*this);
+}
+
+Fixed::Fixed(const int& other)
+{
+	
+}
+
+Fixed(const float& other)
+{
+	
+}
+
+int Fixed::getRawBits()
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (_fixedPointValue);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	_fixedPointValue = raw;
+}
+
+float toFloat( void )
+{
+	
+}
+
+int toInt( void )
+{
+	
 }
