@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:32 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/09 19:58:11 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/09 20:31:08 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ class Fixed
 		Fixed operator++(int);
 		Fixed operator--();
 		Fixed operator--(int);
+		static Fixed min(Fixed &a, Fixed &b);
+		static Fixed min(const Fixed &a, const Fixed &b);
+		static Fixed max(Fixed &a, Fixed &b);
+		static Fixed max(const Fixed &a, const Fixed &b);
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
