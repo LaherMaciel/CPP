@@ -6,14 +6,14 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:52 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/06 10:42:57 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/09 16:28:59 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
 #include <iostream>
 
-int Fixed::getRawBits()
+int Fixed::getRawBits() const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (_fixedPointValue);
