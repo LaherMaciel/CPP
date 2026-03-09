@@ -6,13 +6,13 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:52 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/09 17:10:32 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/09 20:00:00 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
 #include <iostream>
-#include <cmath.h>
+#include <cmath>
 
 Fixed::~Fixed()
 {
@@ -77,50 +77,96 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 	return (out);
 }
 
-bool operator==(const Fixed& fixed)
+bool Fixed::operator==(const Fixed& fixed)
 {
-	if (this->_fixedPointValue == fixed._fixedPointValue)
+	if (_fixedPointValue == fixed._fixedPointValue)
 		return (true);
 	else
 		return (false);
 }
 
-bool operator!=(const Fixed& fixed)
+bool Fixed::operator!=(const Fixed& fixed)
 {
-	if (this->_fixedPointValue != fixed._fixedPointValue)
+	if (_fixedPointValue != fixed._fixedPointValue)
 		return (true);
 	else
 		return (false);
 }
 
-bool operator<(const Fixed& fixed)
+bool Fixed::operator<=(const Fixed& fixed)
 {
-	if (this->_fixedPointValue < fixed._fixedPointValue)
+	if (_fixedPointValue <= fixed._fixedPointValue)
 		return (true);
 	else
 		return (false);
 }
 
-bool operator>(const Fixed& fixed)
+bool Fixed::operator>=(const Fixed& fixed)
 {
-	if (this->_fixedPointValue > fixed._fixedPointValue)
+	if (_fixedPointValue >= fixed._fixedPointValue)
 		return (true);
 	else
 		return (false);
 }
 
-bool operator<=(const Fixed& fixed)
+bool Fixed::operator<(const Fixed& fixed)
 {
-	if (this->_fixedPointValue <= fixed._fixedPointValue)
+	if (_fixedPointValue < fixed._fixedPointValue)
 		return (true);
 	else
 		return (false);
 }
 
-bool operator>=(const Fixed& fixed)
+bool Fixed::operator>(const Fixed& fixed)
 {
-	if (this->_fixedPointValue >= fixed._fixedPointValue)
+	if (_fixedPointValue > fixed._fixedPointValue)
 		return (true);
 	else
 		return (false);
+}
+
+Fixed Fixed::operator+(const Fixed& other)
+{
+	return Fixed(_fixedPointValue + other._fixedPointValue);
+}
+
+Fixed Fixed::operator-(const Fixed& other)
+{
+	return Fixed(_fixedPointValue - other._fixedPointValue);
+}
+
+Fixed Fixed::operator*(const Fixed& other)
+{
+	return Fixed(_fixedPointValue * other._fixedPointValue);
+}
+
+Fixed Fixed::operator/(const Fixed& other)
+{
+	return Fixed(_fixedPointValue / other._fixedPointValue);
+}
+
+Fixed Fixed::operator++()
+{
+	_fixedPointValue += 1;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp = *this;
+	_fixedPointValue += 1;
+	return (temp);
+}
+
+Fixed Fixed::operator--()
+{
+	_fixedPointValue -= 1;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	_fixedPointValue -= 1;
+	return (temp);
 }
