@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lawences <lawences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 17:12:57 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/01/31 19:42:20 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/10 15:07:08 by lawences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,20 @@ PhoneBook::PhoneBook()
 
 static std::string get_input(std::string prompt)
 {
+	int counter = 0;
+
 	std::string input;
 	do
 	{
 		std::cout << prompt;
 		std::getline(std::cin, input);
-	} while (input.empty());
+		counter++;
+	} while (input.empty() && counter != 3);
+	if (counter == 3)
+	{
+		std::cout << "Too many invalid attempts." << std::endl;
+		return ("Error");
+	}
 	return input;
 }
 
@@ -39,18 +47,28 @@ void	PhoneBook::add_contact()
 	std::string input;
 
 	input = get_input("Enter first name: ");
+	if (input == "Error")
+		return ;
 	contacts[next_index].set_first_name(input);
 	
 	input = get_input("Enter last name: ");
+	if (input == "Error")
+		return ;
 	contacts[next_index].set_last_name(input);
 	
 	input = get_input("Enter nickname: ");
+	if (input == "Error")
+		return ;
 	contacts[next_index].set_nickname(input);
 
 	input = get_input("Enter phone number: ");
+	if (input == "Error")
+		return ;
 	contacts[next_index].set_phone_number(input);
 	
 	input = get_input("Enter darkest secret: ");
+	if (input == "Error")
+		return ;
 	contacts[next_index].set_darkest_secret(input);
 
 	if (total_contacts < 8)
