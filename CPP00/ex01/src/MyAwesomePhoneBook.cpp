@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MyAwesomePhoneBook.cpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lawences <lawences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 15:03:17 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/01/30 19:30:33 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/10 15:14:46 by lawences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <string>
 
-std::string trim_string(std::string str)
+std::string main_trim_string(std::string str)
 {
 	size_t start;
 	size_t end;

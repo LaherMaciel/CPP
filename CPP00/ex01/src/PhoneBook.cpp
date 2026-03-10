@@ -6,7 +6,7 @@
 /*   By: lawences <lawences@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 17:12:57 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/10 15:07:08 by lawences         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:15:02 by lawences         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ PhoneBook::PhoneBook()
 	next_index = 0;
 }
 
+std::string trim_string(std::string str)
+{
+	size_t start;
+	size_t end;
+
+	start = str.find_first_not_of(" \t");
+	if (start == std::string::npos)
+		return "";
+	end = str.find_last_not_of(" \t");
+	return str.substr(start, end - start + 1);
+}
+
 static std::string get_input(std::string prompt)
 {
 	int counter = 0;
@@ -33,6 +45,7 @@ static std::string get_input(std::string prompt)
 		std::cout << prompt;
 		std::getline(std::cin, input);
 		counter++;
+		input = trim_string(input);
 	} while (input.empty() && counter != 3);
 	if (counter == 3)
 	{
