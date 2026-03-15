@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:52 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/09 20:34:44 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/12 17:48:43 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,42 +70,42 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 	return (out);
 }
 
-bool Fixed::operator==(const Fixed& fixed)
+bool Fixed::operator==(const Fixed& fixed) const
 {
 	if (_fixedPointValue == fixed._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator!=(const Fixed& fixed)
+bool Fixed::operator!=(const Fixed& fixed) const
 {
 	if (_fixedPointValue != fixed._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator<=(const Fixed& fixed)
+bool Fixed::operator<=(const Fixed& fixed) const
 {
 	if (_fixedPointValue <= fixed._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator>=(const Fixed& fixed)
+bool Fixed::operator>=(const Fixed& fixed) const
 {
 	if (_fixedPointValue >= fixed._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator<(const Fixed& fixed)
+bool Fixed::operator<(const Fixed& fixed) const
 {
 	if (_fixedPointValue < fixed._fixedPointValue)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator>(const Fixed& fixed)
+bool Fixed::operator>(const Fixed& fixed) const
 {
 	if (_fixedPointValue > fixed._fixedPointValue)
 		return (true);
@@ -114,22 +114,26 @@ bool Fixed::operator>(const Fixed& fixed)
 
 Fixed Fixed::operator+(const Fixed& other)
 {
-	return Fixed(_fixedPointValue + other._fixedPointValue);
+	Fixed temp;
+	temp.setRawBits(_fixedPointValue + other._fixedPointValue);
+	return (temp);
 }
 
 Fixed Fixed::operator-(const Fixed& other)
 {
-	return Fixed(_fixedPointValue - other._fixedPointValue);
+	Fixed temp;
+	temp.setRawBits(_fixedPointValue - other._fixedPointValue);
+	return (temp);
 }
 
 Fixed Fixed::operator*(const Fixed& other)
 {
-	return Fixed(_fixedPointValue * other._fixedPointValue);
+	return (this->toFloat() * other.toFloat());
 }
 
 Fixed Fixed::operator/(const Fixed& other)
 {
-	return Fixed(_fixedPointValue / other._fixedPointValue);
+	return (this->toFloat() / other.toFloat());
 }
 
 Fixed Fixed::operator++()

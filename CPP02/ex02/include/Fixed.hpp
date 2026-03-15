@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:32 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/09 20:31:08 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/12 17:48:13 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ class Fixed
 		void setRawBits(int const raw);
 		float toFloat( void ) const;
 		int toInt( void ) const;
-		bool operator==(const Fixed& fixed);
-		bool operator!=(const Fixed& fixed);
-		bool operator<=(const Fixed& fixed);
-		bool operator>=(const Fixed& fixed);
-		bool operator<(const Fixed& fixed);
-		bool operator>(const Fixed& fixed);
+		bool operator==(const Fixed& fixed) const;
+		bool operator!=(const Fixed& fixed) const;
+		bool operator<=(const Fixed& fixed) const;
+		bool operator>=(const Fixed& fixed) const;
+		bool operator<(const Fixed& fixed) const;
+		bool operator>(const Fixed& fixed) const;
 		Fixed operator+(const Fixed& other);
 		Fixed operator-(const Fixed& other);
 		Fixed operator*(const Fixed& other);
