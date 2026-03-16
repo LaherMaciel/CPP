@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:52 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/12 17:48:43 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/16 18:07:40 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,6 @@ Fixed::Fixed()
 	_fixedPointValue = 0;
 }
 
-Fixed::Fixed(const int other)
-{
-	_fixedPointValue = other << _fractionalBits;
-}
-
-Fixed::Fixed(const float other)
-{
-	_fixedPointValue = roundf(other * (1 << _fractionalBits));
-}
-
 Fixed::Fixed(const Fixed& other)
 {
 	this->_fixedPointValue = other._fixedPointValue;
@@ -42,6 +32,16 @@ Fixed& Fixed::operator=(const Fixed& other)
 {
 	this->_fixedPointValue = other._fixedPointValue;
 	return (*this);
+}
+
+Fixed::Fixed(const int other)
+{
+	_fixedPointValue = other << _fractionalBits;
+}
+
+Fixed::Fixed(const float other)
+{
+	_fixedPointValue = roundf(other * (1 << _fractionalBits));
 }
 
 int Fixed::getRawBits() const
