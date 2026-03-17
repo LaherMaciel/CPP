@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 20:30:55 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/17 18:31:18 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/17 19:02:52 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 
 void ScavTrap::guardGate()
 {
-	std::cout << this->name << " ScavTrap Is Now in Gate Keeper Mode!"
-		<< std::endl;
-};
+	if (energyPoints != 0 && hitPoints != 0)
+		std::cout << this->name << " ScavTrap Is Now in Gate Keeper Mode!"
+			<< std::endl;
+	else
+		std::cout << "Unable to Activate Guard Mode:" << std::endl << "EnergyPoints = "
+			<< energyPoints << std::endl << "HitPoints = " << hitPoints << std::endl;
+}
