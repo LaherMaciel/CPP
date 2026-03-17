@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 20:30:55 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/17 18:57:18 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/17 19:54:46 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap()
 	maxHitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
-	std::cout << name << " ScavTrap Created!" << std::endl;
+	std::cout << "ScavTrap Created!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string setName) : ClapTrap(setName)

@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 15:02:35 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/17 18:53:36 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/17 19:58:16 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
 	std::cout << "Copy ClapTrap assignment operator called for " << name
 		<< "!" << std::endl;
-	
 	std::cout << "And now " << this->name;
 	this->name = other.name;
 	this->hitPoints = other.hitPoints;
