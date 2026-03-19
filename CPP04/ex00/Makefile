@@ -1,12 +1,12 @@
 NAME = Polymorphism
 
 # All source files
-SRCS_CPP = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS_CPP = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 SRCS_DIRECTORY = src/
 SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
 
 # Header files
-HEADER_LIST = Animal.hpp Dog.hpp Cat.hpp
+HEADER_LIST = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 HEADER_DIRECTORY = include/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
