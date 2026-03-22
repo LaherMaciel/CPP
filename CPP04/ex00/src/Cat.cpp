@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 19:28:47 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/17 20:57:07 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/22 19:53:36 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Cat::~Cat()
 {
-	std::cout << "The Cat Destroid!" << std::endl;
+	std::cout << "The Cat Destroyed!" << std::endl;
 }
 Cat::Cat(): Animal()
 {

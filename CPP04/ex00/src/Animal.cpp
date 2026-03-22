@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 19:13:41 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/17 20:22:38 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/22 19:53:31 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Animal::~Animal()
 {
-	std::cout << "The " << type << " Animal Destroid!" << std::endl;
+	std::cout << "The " << type << " Animal Destroyed!" << std::endl;
 }
 Animal::Animal()
 {

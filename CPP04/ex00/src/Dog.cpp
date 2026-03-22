@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 19:28:51 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/17 20:54:33 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/22 19:53:40 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Dog::~Dog()
 {
-	std::cout << "The Dog Destroid!" << std::endl;
+	std::cout << "The Dog Destroyed!" << std::endl;
 }
 Dog::Dog(): Animal()
 {

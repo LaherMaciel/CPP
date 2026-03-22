@@ -15,7 +15,7 @@
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "The " << type << " WrongAnimal Destroid!" << std::endl;
+	std::cout << "The " << type << " WrongAnimal Destroyed!" << std::endl;
 }
 WrongAnimal::WrongAnimal()
 {
