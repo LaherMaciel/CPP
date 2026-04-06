@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 19:14:15 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/22 19:47:56 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/03/24 17:16:20 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,9 @@ int main()
 	std::cout << dog1.getBrain()->getIdea(0) << std::endl;
 	std::cout << dog2.getBrain()->getIdea(0) << std::endl;
 	std::cout << std::endl;
+
+	/* const Animal* meta2 = new Animal();
+	meta2->makeSound();
+	delete(meta2); */
 	return (0);
 }
