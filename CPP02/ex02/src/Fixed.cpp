@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:52 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/16 18:07:40 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/04/06 13:19:38 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,31 +112,31 @@ bool Fixed::operator>(const Fixed& fixed) const
 	return (false);
 }
 
-Fixed Fixed::operator+(const Fixed& other)
+Fixed Fixed::operator+(const Fixed& other) const
 {
 	Fixed temp;
 	temp.setRawBits(_fixedPointValue + other._fixedPointValue);
 	return (temp);
 }
 
-Fixed Fixed::operator-(const Fixed& other)
+Fixed Fixed::operator-(const Fixed& other) const
 {
 	Fixed temp;
 	temp.setRawBits(_fixedPointValue - other._fixedPointValue);
 	return (temp);
 }
 
-Fixed Fixed::operator*(const Fixed& other)
+Fixed Fixed::operator*(const Fixed& other) const
 {
 	return (this->toFloat() * other.toFloat());
 }
 
-Fixed Fixed::operator/(const Fixed& other)
+Fixed Fixed::operator/(const Fixed& other) const
 {
 	return (this->toFloat() / other.toFloat());
 }
 
-Fixed Fixed::operator++()
+Fixed& Fixed::operator++()
 {
 	_fixedPointValue += 1;
 	return (*this);
@@ -149,7 +149,7 @@ Fixed Fixed::operator++(int)
 	return (temp);
 }
 
-Fixed Fixed::operator--()
+Fixed& Fixed::operator--()
 {
 	_fixedPointValue -= 1;
 	return (*this);

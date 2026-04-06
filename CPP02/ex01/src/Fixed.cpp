@@ -6,13 +6,13 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:52 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/09 17:08:22 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/04/06 13:12:10 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
 #include <iostream>
-#include <cmath.h>
+#include <cmath>
 
 Fixed::~Fixed()
 {

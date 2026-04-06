@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 15:26:32 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/12 17:48:13 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/04/06 13:18:37 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ class Fixed
 		bool operator>=(const Fixed& fixed) const;
 		bool operator<(const Fixed& fixed) const;
 		bool operator>(const Fixed& fixed) const;
-		Fixed operator+(const Fixed& other);
-		Fixed operator-(const Fixed& other);
-		Fixed operator*(const Fixed& other);
-		Fixed operator/(const Fixed& other);
-		Fixed operator++();
+		Fixed operator+(const Fixed& other) const;
+		Fixed operator-(const Fixed& other) const;
+		Fixed operator*(const Fixed& other) const;
+		Fixed operator/(const Fixed& other) const;
+		Fixed& operator++();
 		Fixed operator++(int);
-		Fixed operator--();
+		Fixed& operator--();
 		Fixed operator--(int);
 		static Fixed min(Fixed &a, Fixed &b);
 		static Fixed min(const Fixed &a, const Fixed &b);
