@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 20:30:55 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/03/17 19:54:46 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/04/06 15:58:11 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,20 @@ void ScavTrap::guardGate()
 	else
 		std::cout << "Unable to Activate Guard Mode:" << std::endl << "EnergyPoints = "
 			<< energyPoints << std::endl << "HitPoints = " << hitPoints << std::endl;
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (energyPoints != 0 && hitPoints != 0)
+	{
+		std::cout << name << " ScavTrap attacked " << target << " causing "
+			<< attackDamage << " of damaged!" << std::endl;
+		energyPoints--;
+		std::cout << "EnergyPoints = " << energyPoints << std::endl;
+	}
+	else
+	{
+		std::cout << "Unable to Attack:" << std::endl << "EnergyPoints = "
+		<< energyPoints << std::endl << "HitPoints = " << hitPoints << std::endl;
+	}
 }
