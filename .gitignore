@@ -189,3 +189,4 @@ fr.subject*
 *.temp
 *.bak
 *.backup
+.claude/
