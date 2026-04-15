@@ -12,7 +12,7 @@ OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
 
 # Compiler settings
 CPP = c++
-CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # Colors
 RED     = \033[0;31m

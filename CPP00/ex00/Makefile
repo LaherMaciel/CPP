@@ -10,7 +10,7 @@ OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
 
 # Compiler settings
 CC = c++
-CFLAGS = -g -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # Colors
 RED     = \033[0;31m

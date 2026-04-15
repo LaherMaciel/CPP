@@ -4,7 +4,7 @@
 
 Module 00 introduces the fundamental concepts of C++ programming, focusing on object-oriented programming basics and the C++98 standard.
 
-## Learning Objectives
+## Learning objectives
 
 - C++ namespaces and standard I/O streams
 - Class definition, member functions, and access specifiers
@@ -13,29 +13,13 @@ Module 00 introduces the fundamental concepts of C++ programming, focusing on ob
 - Const correctness
 - Encapsulation and basic OOP principles
 
-## Exercise Structure
-
-```
-CPP00/
-├── ex00/    # Megaphone
-├── ex01/    # My Awesome PhoneBook
-├── ex02/    # The Job Of Your Dreams
-└── README.md
-```
-
 ## Exercises
 
-### Exercise 00: Megaphone
-- **Focus**: Basic string manipulation and standard output
-- **Concepts**: `std::cout`, `std::toupper`, command-line arguments
-
-### Exercise 01: My Awesome PhoneBook
-- **Focus**: Class design and user interaction
-- **Concepts**: Classes (Contact, PhoneBook), encapsulation, getters/setters, `std::getline`, `std::setw`, input validation, circular buffer logic
-
-### Exercise 02: The Job Of Your Dreams
-- **Focus**: Recreating a class implementation from a provided header and test file
-- **Concepts**: Static members, const member functions, destructors, `localtime()`, file-scope static functions, matching output to specification
+| Exercise | Name | Key concepts |
+|----------|------|-------------|
+| ex00 | Megaphone | `std::cout`, `std::toupper`, command-line arguments |
+| ex01 | My Awesome PhoneBook | Classes, encapsulation, `std::getline`, `std::setw`, circular buffer |
+| ex02 | The Job Of Your Dreams | Static members, const member functions, `localtime()`, matching a spec |
 
 ## Compilation
 
@@ -45,17 +29,3 @@ make
 ```
 
 Compiles with `-Wall -Wextra -Werror -std=c++98`.
-
-## Progress
-
-- [x] Exercise 00: Megaphone
-- [x] Exercise 01: My Awesome PhoneBook
-- [x] Exercise 02: The Job Of Your Dreams
-
-## Next Module
-
-After completing Module 00, move on to [CPP Module 01](../CPP01/README.md) which covers memory allocation, references, pointers to members, and the switch statement.
-
----
-
-**Status**: Complete
