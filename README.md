@@ -14,8 +14,8 @@ All modules compile with `-Wall -Wextra -Werror -std=c++98`.
 | [CPP00](CPP00/README.md) | Namespaces, classes, member functions, I/O streams | Complete |
 | [CPP01](CPP01/README.md) | Memory allocation, references, pointers to members, switch | Complete |
 | [CPP02](CPP02/README.md) | Operator overloading, Orthodox Canonical Form, fixed-point | Complete |
-| [CPP03](CPP03/README.md) | Inheritance — ClapTrap / ScavTrap / FragTrap chain | In progress |
-| [CPP04](CPP04/README.md) | Subtype polymorphism, abstract classes, interfaces | In progress |
+| [CPP03](CPP03/README.md) | Inheritance — ClapTrap / ScavTrap / FragTrap chain | Complete |
+| [CPP04](CPP04/README.md) | Subtype polymorphism, abstract classes, interfaces | Complete |
 | [CPP05](CPP05/README.md) | Exceptions, custom exception classes | In progress |
 | [CPP06](CPP06/README.md) | C++ casts (static, dynamic, reinterpret, const) | In progress |
 | [CPP07](CPP07/README.md) | Function and class templates | In progress |
