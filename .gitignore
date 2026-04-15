@@ -190,3 +190,12 @@ fr.subject*
 *.bak
 *.backup
 .claude/
+
+# Subject and evaluation files
+*.pdf
+*.tgz
+en.subject*
+*eval_sheet*
+*eval*
+*.zip
+
