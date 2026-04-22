@@ -6,6 +6,8 @@ alias reloadalias="source ~/.zshrc"
 alias clean="make clean && clear"
 alias fclean="make fclean && clear"
 
+alias checkStorage="ncdu"
+
 alias ClaudeTaskForce="claude --teammate-mode tmux"
 
 #Informatica
@@ -82,6 +84,9 @@ alias PhilosophersFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects
 alias CPPFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/CPP"
 alias NetPracticeFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank4/NetPractice"
 alias cub3dFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank4/cub3d"
+#Rank 5
+alias webservFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank5/webServ"
+alias inceptionFolder"cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank5/Inception"
 
 #SideProjects
 alias LexMozFolder="cd /Users/lahermaciel/Documents/Informatica/SideProjects/LexMoz"
