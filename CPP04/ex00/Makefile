@@ -16,8 +16,8 @@ OBJECTS_DIRECTORY = objects/
 OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
 
 # Compiler settings
-CPP = c++
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 INCLUDES = -I$(HEADER_DIRECTORY)
 
 # Colors
@@ -30,7 +30,7 @@ RESET   = \033[0m
 # Main target
 $(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
 	@echo "[" "$(YELLOW)..$(RESET)" "] | Compiling files..."
-	@if $(CPP) $(CPPFLAGS) $(OBJECTS) -o $(NAME); then \
+	@if $(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME); then \
 		echo "[" "$(GREEN)OK$(RESET)" "] | Compilation successful!"; \
 		echo "[" "$(GREEN)OK$(RESET)" "] | $(NAME) created successfully!"; \
 	else \
@@ -48,7 +48,7 @@ $(OBJECTS_DIRECTORY):
 # Compile object files
 $(OBJECTS_DIRECTORY)%.o : $(SRCS_DIRECTORY)%.cpp $(HEADERS)
 	@mkdir -p $(@D)
-	@$(CPP) $(CPPFLAGS) -c $(INCLUDES) $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $(INCLUDES) $< -o $@
 
 all: $(NAME)
 
