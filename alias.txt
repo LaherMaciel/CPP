@@ -1,0 +1,90 @@
+export PATH="$HOME/.local/bin:$HOME/Library/Python/3.9/bin:$PATH"
+
+alias editalias="code ~/.zshrc"
+alias reloadalias="source ~/.zshrc"
+
+alias clean="make clean && clear"
+alias fclean="make fclean && clear"
+
+alias ClaudeTaskForce="claude --teammate-mode tmux"
+
+#Informatica
+alias opencontext="cd /Users/lahermaciel/Documents/Informatica/Context"
+alias InformaticaFolder="cd /Users/lahermaciel/Documents/Informatica"
+alias JobFindingFolder="cd /Users/lahermaciel/Documents/Informatica/JobFinding"
+alias 42ProjectsFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects"
+alias SideProjectsFolder="cd /Users/lahermaciel/Documents/Informatica/SideProjects"
+
+#42Projects
+# Clone all 42 projects onto a new machine
+function GitClone42Projects() {
+    git clone --recurse-submodules git@github.com:LaherMaciel/42Projects.git
+    cd 42Projects
+    bash setup.sh
+}
+
+# Pull latest changes from all submodule remotes and update parent repo pointers
+function GitPull42Projects() {
+    local current=$(pwd)
+    cd /Users/lahermaciel/Documents/Informatica/42Projects
+    bash update.sh
+    cd "$current"
+}
+
+# Commit and push local changes in every submodule, then update parent repo pointers
+function GitPush42Projects() {
+    local current=$(pwd)
+    local root="/Users/lahermaciel/Documents/Informatica/42Projects"
+
+    echo -n "Commit message: "
+    read msg
+    if [ -z "$msg" ]; then
+        echo "Aborted: commit message cannot be empty."
+        return 1
+    fi
+
+    git submodule foreach --quiet '
+        if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "'"$msg"'"
+            git push
+            echo "[OK] Pushed $name"
+        else
+            echo "[--] No changes in $name"
+        fi
+    '
+
+    cd "$root"
+    if [ -n "$(git status --porcelain)" ]; then
+        git add -A
+        git commit -m "$msg"
+        git push
+        echo "[OK] Parent repo updated"
+    fi
+
+    cd "$current"
+}
+
+alias ExamsFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Exams"
+# Rank 0
+alias LibftFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank0/libft"
+# Rank 1
+alias FtPrintfFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank1/ft_printf"
+alias GNLFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank1/get_next_line"
+# Rank 2
+alias PipexFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank2/pipex"
+alias PushSwapFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank2/Push_swap"
+alias SoLongFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank2/So_Long"
+# Rank 3
+alias MinishellFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank3/Minishell"
+alias PhilosophersFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank3/Philosophers"
+# Rank 4
+alias CPPFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/CPP"
+alias NetPracticeFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank4/NetPractice"
+alias cub3dFolder="cd /Users/lahermaciel/Documents/Informatica/42Projects/Rank4/cub3d"
+
+#SideProjects
+alias LexMozFolder="cd /Users/lahermaciel/Documents/Informatica/SideProjects/LexMoz"
+alias DriveHubFolder="cd /Users/lahermaciel/Documents/Informatica/SideProjects/DriveHub"
+alias ProjectLunaFolder="cd /Users/lahermaciel/Documents/Informatica/SideProjects/Project_Luna"
+alias TradingBotFolder="cd /Users/lahermaciel/Documents/Informatica/SideProjects/Trading_bot"
