@@ -26,9 +26,14 @@
 # Executables
 */ex00/megaphone
 */ex01/MyAwesomePhoneBook
+*/ex02/form
+*/ex03/form
 *.exe
 *.out
 *.app
+
+# Generated shrubbery output files (ex02/ex03 ShrubberyCreationForm)
+*_shrubbery
 
 # Debug files
 *.dSYM/

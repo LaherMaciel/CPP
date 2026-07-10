@@ -6,14 +6,14 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 14:31:24 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/06/25 11:45:11 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/07/10 15:48:37 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
-Bureaucrat::Bureaucrat(const std::string& name, int grade):
-	_name(name), _grade(grade)
+Bureaucrat::Bureaucrat(const std::string& name, int grade): _name(name), _grade(grade)
 {
 	if (_grade < HIGHEST_GRADE)
 		throw GradeTooHighException();
@@ -21,12 +21,10 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade):
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other):
-	_name(other._name), _grade(other._grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& other): _name(other._name), _grade(other._grade)
 {
 }
 
-// _name is const by design — only _grade transfers
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& that)
 {
 	if (this != &that)
@@ -63,10 +61,45 @@ void Bureaucrat::decrementGrade()
 	++_grade;
 }
 
+void	Bureaucrat::signForm(AForm& form)
+{
+	if (form.getIsSigned())
+	{
+		std::cout << _name << " couldn't sign " << form.getName()
+			<< " because it is already signed." << std::endl;
+		return ;
+	}
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << "." << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << _name << " couldn't sign " << form.getName() <<
+		" because " << e.what() << "." << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(const AForm& form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << "."
+			<< std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << _name << " couldn't execute " << form.getName()
+			<< " because " << e.what() << "." << std::endl;
+	}
+}
+
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
 {
-	out << bureaucrat.getName() << ", bureaucrat grade " <<
-		bureaucrat.getGrade() << ".";
+	out << bureaucrat.getName() << ", bureaucrat grade "
+		<< bureaucrat.getGrade() << ".";
 	return (out);
 }
 
