@@ -1,12 +1,10 @@
-NAME = Aaaaand...OPEN!
-
 # All source files
-SRCS_CPP = main.cpp ClapTrap.cpp
+SRCS_CPP = main.cpp
 SRCS_DIRECTORY = src/
 SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
 
 # Header files
-HEADER_LIST = ClapTrap.hpp
+HEADER_LIST = Array.hpp
 HEADER_DIRECTORY = include/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
@@ -15,9 +13,12 @@ OBJECT_LIST = $(notdir $(SRCS_LIST:.cpp=.o))
 OBJECTS_DIRECTORY = objects/
 OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
 
+# name
+NAME = array
+
 # Compiler settings
-CPP = c++
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 INCLUDES = -I$(HEADER_DIRECTORY)
 
 # Colors
@@ -28,14 +29,16 @@ BLUE    = \033[0;34m
 RESET   = \033[0m
 
 # Main target
+all: $(NAME)
+
 $(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
 	@echo "[" "$(YELLOW)..$(RESET)" "] | Compiling files..."
-	@if $(CPP) $(CPPFLAGS) $(OBJECTS) -o $(NAME); then \
+	@if $(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME); then \
 		echo "[" "$(GREEN)OK$(RESET)" "] | Compilation successful!"; \
 		echo "[" "$(GREEN)OK$(RESET)" "] | $(NAME) created successfully!"; \
 	else \
 		echo "[" "$(RED)Error$(RESET)" "] | An error occurred while creating $(NAME)."; \
-		make clean > /dev/null 2>&1; \
+		$(MAKE) clean > /dev/null 2>&1; \
 		echo "[" "$(RED)Error$(RESET)" "] | All objects cleaned."; \
 		exit 1; \
 	fi
@@ -49,9 +52,7 @@ $(OBJECTS_DIRECTORY):
 # Compile object files
 $(OBJECTS_DIRECTORY)%.o : $(SRCS_DIRECTORY)%.cpp $(HEADERS)
 	@mkdir -p $(@D)
-	@$(CPP) $(CPPFLAGS) -c $(INCLUDES) $< -o $@
-
-all: $(NAME)
+	@$(CXX) $(CXXFLAGS) -c $(INCLUDES) $< -o $@
 
 # Clean targets
 clean:
@@ -67,13 +68,16 @@ fclean: clean
 # Rebuild target
 re: fclean
 	@echo "[" "$(YELLOW)..$(RESET)" "] | Rebuilding $(NAME)..."
-	@make -s
+	@$(MAKE)
 
 run: $(NAME)
 	./$(NAME)
 
 val: $(NAME)
 	valgrind ./$(NAME)
+
+macleaks: $(NAME)
+	leaks --atExit -- ./$(NAME)
 
 # Help target
 help:
@@ -84,4 +88,4 @@ help:
 	@echo "  re          - Rebuild everything"
 	@echo "  help        - Show this help message"
 
-.PHONY: all clean fclean re norm help
+.PHONY: all clean fclean re run val macleaks help
