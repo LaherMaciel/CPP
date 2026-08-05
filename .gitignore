@@ -207,7 +207,5 @@ en.subject*
 
 # 42 project binaries (extensionless — will not match .cpp/.hpp sources)
 CPP06/ex00/convert
-CPP06/ex00/scalar
 CPP06/ex01/serializer
 CPP06/ex02/identify
-CPP07/ex00/whatever

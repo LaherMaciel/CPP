@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/04 14:15:00 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/08/05 21:11:53 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/08/05 21:25:58 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@
 template <typename T>
 void	swap(T& a, T& b)
 {
-	T*	temp;
+	T	temp = a;
 
-	temp = a;
 	a = b;
 	b = temp;
 }
@@ -29,8 +28,6 @@ void	swap(T& a, T& b)
 template <typename T>
 T const &	min(T const& a, T const& b)
 {
-	if (a == b)
-		return (b);
 	if (a < b)
 		return (a);
 	return (b);
@@ -39,8 +36,6 @@ T const &	min(T const& a, T const& b)
 template <typename T>
 T const &	max(T const& a, T const& b)
 {
-	if (a == b)
-		return (b);
 	if (a > b)
 		return (a);
 	return (b);
