@@ -1,10 +1,10 @@
 # All source files
-SRCS_CPP = main.cpp Base.cpp generate.cpp identifyPtr.cpp identifyRef.cpp
+SRCS_CPP = main.cpp
 SRCS_DIRECTORY = src/
 SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
 
 # Header files
-HEADER_LIST = Base.hpp A.hpp B.hpp C.hpp Functions.hpp
+HEADER_LIST = iter.hpp
 HEADER_DIRECTORY = include/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
@@ -14,7 +14,7 @@ OBJECTS_DIRECTORY = objects/
 OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
 
 # name
-NAME = identify
+NAME = iter
 
 # Compiler settings
 CXX = c++

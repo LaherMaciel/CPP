@@ -63,9 +63,6 @@ fclean: clean
 	@echo "[" "$(YELLOW)..$(RESET)" "] | Removing $(NAME)..."
 	@rm -rf $(NAME)
 	@echo "[" "$(GREEN)OK$(RESET)" "] | $(NAME) removed."
-	@echo "[" "$(YELLOW)..$(RESET)" "] | Removing generated shrubbery files..."
-	@rm -f *_shrubbery
-	@echo "[" "$(GREEN)OK$(RESET)" "] | Shrubbery files removed."
 
 # Rebuild target
 re: fclean

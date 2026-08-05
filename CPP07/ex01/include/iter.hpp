@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/04 14:15:00 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/08/05 22:46:12 by lahermaciel      ###   ########.fr       */
+/*   Created: 2026/08/05 22:35:00 by lahermaciel       #+#    #+#             */
+/*   Updated: 2026/08/05 23:21:44 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
 
-template <typename T>
-void	swap(T& a, T& b)
+# include <cstddef>
+
+template <typename T, typename F>
+void	iter(T* array, size_t const length, F function)
 {
-	T	temp = a;
-
-	a = b;
-	b = temp;
-}
-
-template <typename T>
-T const &	min(T const& a, T const& b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-template <typename T>
-T const &	max(T const& a, T const& b)
-{
-	if (a > b)
-		return (a);
-	return (b);
+	for (size_t i = 0; i < length; i++)
+	{
+		function(array[i]);
+	}
 }
 
 #endif
