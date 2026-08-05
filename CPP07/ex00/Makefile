@@ -1,10 +1,10 @@
 # All source files
-SRCS_CPP = main.cpp Serializer.cpp
+SRCS_CPP = main.cpp
 SRCS_DIRECTORY = src/
 SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
 
 # Header files
-HEADER_LIST = Serializer.hpp Data.hpp
+HEADER_LIST = whatever.hpp
 HEADER_DIRECTORY = include/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
@@ -14,7 +14,7 @@ OBJECTS_DIRECTORY = objects/
 OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
 
 # name
-NAME = serializer
+NAME = whatever
 
 # Compiler settings
 CXX = c++

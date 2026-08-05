@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Functions.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 13:25:37 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/07/19 18:38:40 by lahermaciel      ###   ########.fr       */
+/*   Created: 2026/08/03 19:00:00 by lahermaciel       #+#    #+#             */
+/*   Updated: 2026/08/04 14:02:17 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#ifndef FUNCTIONS_HPP
+# define FUNCTIONS_HPP
 
-# include <stdint.h>
-# include "Data.hpp"
+# include "Base.hpp"
 
-class Serializer
-{
-	private:
-		Serializer();
-		Serializer(const Serializer& other);
-		Serializer& operator=(const Serializer& other);
-		~Serializer();
-
-	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
-};
+Base*	generate(void);
+void	identify(Base* p);
+void	identify(Base& p);
 
 #endif

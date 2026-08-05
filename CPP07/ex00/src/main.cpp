@@ -5,30 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 11:22:38 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/08/03 18:16:01 by lahermaciel      ###   ########.fr       */
+/*   Created: 2026/08/04 14:15:00 by lahermaciel       #+#    #+#             */
+/*   Updated: 2026/08/05 21:17:01 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#include "whatever.hpp"
 #include <iostream>
+#include <string>
 
-int	main(void)
+int main( void )
 {
-	Data		d;
-	uintptr_t	raw;
-	Data*		back;
-
-	d.name = "KB";
-	d.value = 43;
-	raw = Serializer::serialize(&d);
-	back = Serializer::deserialize(raw);
-	std::cout << raw << " = " << back << " = " << &d << std::endl;
-	if (&d == back)
-		std::cout << "The values are equal." << std::endl;
-	else
-		std::cout << "The values are NOT equal." << std::endl;
-	std::cout << "d -> " << d.name << " " << d.value << std::endl;
-	std::cout << "back -> " << back->name << " " << back->value << std::endl;
+	int a = 2;
+	int b = 3;
+	
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	return (0);
 }

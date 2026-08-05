@@ -5,30 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 11:22:38 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/08/03 18:16:01 by lahermaciel      ###   ########.fr       */
+/*   Created: 2026/08/03 19:00:00 by lahermaciel       #+#    #+#             */
+/*   Updated: 2026/08/03 22:03:48 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#include "Functions.hpp"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 int	main(void)
 {
-	Data		d;
-	uintptr_t	raw;
-	Data*		back;
+	Base* p = NULL;
 
-	d.name = "KB";
-	d.value = 43;
-	raw = Serializer::serialize(&d);
-	back = Serializer::deserialize(raw);
-	std::cout << raw << " = " << back << " = " << &d << std::endl;
-	if (&d == back)
-		std::cout << "The values are equal." << std::endl;
-	else
-		std::cout << "The values are NOT equal." << std::endl;
-	std::cout << "d -> " << d.name << " " << d.value << std::endl;
-	std::cout << "back -> " << back->name << " " << back->value << std::endl;
+	srand(static_cast<unsigned int>(time(NULL)));
+	for (int i = 0; i < 10; i++)
+	{
+		p = generate();
+		identify(p);
+		identify(*p);
+		delete p;
+		std::cout << std::endl;
+	}
 	return (0);
 }

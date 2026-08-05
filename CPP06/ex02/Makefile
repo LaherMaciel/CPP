@@ -1,10 +1,10 @@
 # All source files
-SRCS_CPP = main.cpp Base.cpp Functions.cpp
+SRCS_CPP = main.cpp Base.cpp generate.cpp identifyPtr.cpp identifyRef.cpp
 SRCS_DIRECTORY = src/
 SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
 
 # Header files
-HEADER_LIST = Base.hpp A.hpp B.hpp C.hpp
+HEADER_LIST = Base.hpp A.hpp B.hpp C.hpp Functions.hpp
 HEADER_DIRECTORY = include/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
@@ -90,4 +90,4 @@ help:
 	@echo "  re          - Rebuild everything"
 	@echo "  help        - Show this help message"
 
-.PHONY: all clean fclean re norm help
+.PHONY: all clean fclean re run val macleaks help
