@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 00:20:00 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/08/06 00:26:07 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/08/12 23:13:09 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ARRAY_HPP
 
 # include <exception>
+# include <cstddef>
 
 // Class template. Same rule as ex00/ex01: the definitions must be visible where
 // the class is used, so they live in this header (or in an Array.tpp included
@@ -62,44 +63,102 @@ class Array
 template <typename T>
 Array<T>::Array(void)
 {
+	_size = 0;
+	_data = NULL;
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
-	(void)n;
+	_size = n;
+	if (_size == 0)
+		_data = NULL;
+	else
+		_data = new T[_size]();
 }
 
 template <typename T>
 Array<T>::Array(Array const& other)
 {
-	(void)other;
+	unsigned int i = 0;
+	_size = other._size;
+	if (_size == 0)
+	{
+		_data = NULL;
+		return ;
+	}
+	_data = new T[_size]();
+
+	try 
+	{
+		while (i < _size)
+		{
+			_data[i] = other._data[i];
+			i++;
+		}
+	}
+	catch (...)
+	{
+		delete [] _data;
+		throw;
+	}
 }
 
 template <typename T>
 Array<T>::~Array(void)
 {
+	delete[] _data;
 }
 
 template <typename T>
 Array<T>&	Array<T>::operator=(Array const& other)
 {
-	(void)other;
+	if (this == &other)
+		return (*this);
+
+	if (other._size == 0)
+	{
+		delete[] _data;
+		_data = NULL;
+		_size = 0;
+		return (*this);
+	}
+	T* tmp = new T[other._size]();
+	unsigned int i = 0;
+
+	try
+	{
+		while (i < other._size)
+		{
+			tmp[i] = other._data[i];
+			i++;
+		}
+	}
+	catch (...)
+	{
+		delete[] tmp;
+		throw;
+	}
+	delete[] _data;
+	_size = other._size;
+	_data = tmp;
 	return (*this);
 }
 
 template <typename T>
 T&	Array<T>::operator[](unsigned int index)
 {
-	(void)index;
-	return (_data[0]);
+	if (index >= _size)
+		throw OutOfBoundsException();
+	return (_data[index]);
 }
 
 template <typename T>
 T const&	Array<T>::operator[](unsigned int index) const
 {
-	(void)index;
-	return (_data[0]);
+	if (index >= _size)
+		throw OutOfBoundsException();
+	return (_data[index]);
 }
 
 template <typename T>
