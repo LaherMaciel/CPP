@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/13 00:00:00 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/08/20 16:44:46 by lahermaciel      ###   ########.fr       */
+/*   Created: 2026/08/20 15:40:00 by lahermaciel       #+#    #+#             */
+/*   Updated: 2026/08/20 17:27:22 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
-# include <algorithm>
-# include <exception>
-
-class NotFoundException : public std::exception { }; 
+# include <stack>
 
 template <typename T>
-typename T::iterator	easyfind(T& container, int value)
+class MutantStack : public std::stack<T>
 {
-	typename T::iterator	it;
-	
-	it = std::find(container.begin(), container.end(), value);
-	if (it == container.end())
-		throw NotFoundException();
-	return (it);
-}
+	public:
+		typedef typename std::stack<T>::container_type::iterator	iterator;
+
+		MutantStack(void);
+		MutantStack(MutantStack const& other);
+		~MutantStack(void);
+		MutantStack&	operator=(MutantStack const& other);
+
+		iterator	begin(void);
+		iterator	end(void);
+};
+
+# include "MutantStack.tpp"
 
 #endif

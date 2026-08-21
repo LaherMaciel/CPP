@@ -36,7 +36,6 @@ int main()
 	{
 		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command);
-		//command = trim_string(command);
 		if (command == "ADD")
 			phonebook.add_contact();
 		else if (command == "SEARCH")
