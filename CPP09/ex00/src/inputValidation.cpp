@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 16:42:30 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/08/21 21:49:33 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/08/22 17:07:35 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 
 std::string   trim(std::string const& s)
 {
-	std::string::size_type  start = s.find_first_not_of(" \t");
+	std::string::size_type  start = s.find_first_not_of(" \t\r");
 
 	if (start == std::string::npos)
 			return ("");
-	std::string::size_type  end = s.find_last_not_of(" \t");
+	std::string::size_type  end = s.find_last_not_of(" \t\r");
 	return (s.substr(start, end - start + 1));
 }
 

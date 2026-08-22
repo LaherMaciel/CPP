@@ -14,11 +14,12 @@
 # define RPN_HPP
 
 # include <stack>
+# include <list>
 # include <string>
 
-// Container choice: std::stack.
-// CPP09 rule -- ex00 used std::map, so map is forbidden here,
-// and std::stack is forbidden in ex02.
+// Container: std::stack adapted over std::list.
+// std::stack defaults to std::deque underneath; pinning std::list keeps
+// deque free for ex02, which needs vector + deque.
 
 class RPN
 {
@@ -31,7 +32,7 @@ class RPN
 		int		evaluate(std::string const& expression);
 
 	private:
-		std::stack<int>	_operands;
+		std::stack<int, std::list<int> >	_operands;
 
 		void	applyOperator(char op);
 };

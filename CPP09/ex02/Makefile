@@ -1,10 +1,10 @@
 # All source files
-SRCS_CPP = main.cpp RPN.cpp
+SRCS_CPP = main.cpp PmergeMe.cpp
 SRCS_DIRECTORY = src/
 SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
 
 # Header files
-HEADER_LIST = RPN.hpp
+HEADER_LIST = PmergeMe.hpp
 HEADER_DIRECTORY = include/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
@@ -14,7 +14,7 @@ OBJECTS_DIRECTORY = objects/
 OBJECTS = $(addprefix $(OBJECTS_DIRECTORY), $(OBJECT_LIST))
 
 # name
-NAME = RPN
+NAME = PmergeMe
 
 # Compiler settings
 CXX = c++
@@ -71,10 +71,7 @@ re: fclean
 	@$(MAKE)
 
 run: $(NAME)
-	./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
-
-run2: $(NAME)
-	./$(NAME) "1 2 * 2 / 2 * 2 4 - +"
+	./$(NAME) input.txt
 
 val: $(NAME)
 	valgrind ./$(NAME)
