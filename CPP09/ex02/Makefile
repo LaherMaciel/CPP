@@ -1,10 +1,10 @@
 # All source files
-SRCS_CPP = main.cpp PmergeMe.cpp
+SRCS_CPP = main.cpp PmergeMe.cpp PmergeMeVector.cpp PmergeMeDeque.cpp
 SRCS_DIRECTORY = src/
 SRCS_LIST = $(addprefix $(SRCS_DIRECTORY), $(SRCS_CPP))
 
 # Header files
-HEADER_LIST = PmergeMe.hpp
+HEADER_LIST = PmergeMe.hpp PmergeMe.tpp
 HEADER_DIRECTORY = include/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
@@ -71,7 +71,7 @@ re: fclean
 	@$(MAKE)
 
 run: $(NAME)
-	./$(NAME) input.txt
+	./$(NAME) 3 5 9 7 4 8 1 6 2
 
 val: $(NAME)
 	valgrind ./$(NAME)

@@ -6,7 +6,7 @@
 /*   By: lahermaciel <lahermaciel@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 19:05:00 by lahermaciel       #+#    #+#             */
-/*   Updated: 2026/08/22 19:05:00 by lahermaciel      ###   ########.fr       */
+/*   Updated: 2026/08/22 21:44:50 by lahermaciel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,17 @@ int	main(int argc, char **argv)
 	}
 	try
 	{
-		sorter.run(argc, argv);
+		sorter.runVector(argc, argv);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+		return (1);
+	}
+
+	try
+	{
+		sorter.runDeque(argc, argv);
 	}
 	catch (std::exception &e)
 	{
@@ -35,3 +45,4 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+ 
